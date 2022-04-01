@@ -1,10 +1,10 @@
 const router = require("express").Router();
-const { Food } = require("../../models");
+const { Meal } = require("../../models");
 
 
 router.get("/", (req, res) => {
-  Food.findAll
-    .then((dbFoodData) => res.json(dbFoodData))
+  Meal.findAll()
+    .then((dbMealData) => res.json(dbMealData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -12,18 +12,22 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  Food.create({
+  Meal.create({
     name: req.body.name,
+    date: req.body.date,
     calories: req.body.calories,
-    protien: req.body.protien,
+    protein: req.body.protein,
     carbs: req.body.carbs,
-    fat: req.body.fat
+    fat: req.body.fat,
+    user_id: req.body.user_id
   })
-    .then((dbFoodData) => res.json(dbFoodData))
+    .then((dbMealData) => res.json(dbMealData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 })
+
+
 
 module.exports = router;
