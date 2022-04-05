@@ -27,6 +27,7 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
+  const myId = req.session.id || req.body.id;
   try {
     const dbMealData = await Meal.create({
       name: req.body.name,
@@ -35,7 +36,7 @@ router.post("/", async (req, res) => {
       protein: req.body.protein,
       carbs: req.body.carbs,
       fat: req.body.fat,
-      user_id: req.body.user_id
+      user_id: myId
     });
     res.status(200).json(dbMealData);
   }
