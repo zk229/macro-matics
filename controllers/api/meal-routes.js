@@ -27,7 +27,8 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const myId = req.session.id || req.body.id;
+  const myId = req.session.user.id || req.body.id;
+  console.log(myId);
   try {
     const dbMealData = await Meal.create({
       name: req.body.name,
