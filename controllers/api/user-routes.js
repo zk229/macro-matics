@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Meal, Workout } = require('../../models');
 
 // CREATE new user
 router.post('/', async (req, res) => {
@@ -16,6 +16,8 @@ router.post('/', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.name = dbUserData.name;
+      req.session.user = dbUserData;
 
       res.status(200).json(dbUserData);
     });
@@ -32,6 +34,10 @@ router.post('/login', async (req, res) => {
       where: {
         email: req.body.email,
       },
+      include: [
+        { model: Meal },
+        { model: Workout }
+      ]
     });
 
     if (!dbUserData) {
@@ -54,6 +60,7 @@ router.post('/login', async (req, res) => {
       req.session.loggedIn = true;
       req.session.name = dbUserData.name;
       req.session.id = dbUserData.id;
+      req.session.user = dbUserData;
 
       res
         .status(200)
