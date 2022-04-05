@@ -27,11 +27,12 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
+  const myId = req.session.user.id || req.body.user_id;
   try {
     const workoutData = await Workout.create({
       date: req.body.date,
       calories: req.body.calories,
-      user_id: req.body.user_id
+      user_id: myId
     });
     res.status(200).json(workoutData);
   }
