@@ -21,4 +21,12 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+router.get("/add-meal", auth, (req, res) => {
+    res.render("add-meal");
+});
+
+router.get("/add-workout", auth, (req, res) => {
+    res.render("add-workout");
+})
+
 module.exports = router;
