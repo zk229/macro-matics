@@ -115,3 +115,26 @@ body {
 .form-group {
   margin: 5px;
 }
+
+.form-input {
+  display: inline block;
+  clear: right;
+  width: 175px;
+  text-align: center
+}
+
+.title {
+  padding: 50px 0px 30px 150px;
+  text-decoration: underline;
+  font-size: 38
+}
+
+.sub-title {
+  text-decoration: underline;
+  padding: 0px 0px 10px 225px;
+  font-size: 20;
+}
+
+.sub-sub-title {
+  padding: 0px 0px 10px 225px;
+}
