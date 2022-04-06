@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fitness Tracker</title>
-    <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
-  </head>
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
 
   <body>
     <header>
@@ -32,8 +32,19 @@
           <button class="btn btn-primary" id="meal-btn">Add a Meal</button>
           <button class="btn btn-primary" id="stat-btn">View Stats</button>
         {{/if}}
-        {{{body}}}
-      </div>
+    </nav>
+    <main>
+        <aside>
+            <h2>Enjoy the galleries!</h2>
+        </aside>
+        <div class="gallery">
+            {{#if loggedIn}}
+            <a href="/add-workout">Add a Workout</a>
+            <a href="/add-meal">Add a Meal</a>
+            <a href="/view-stats">View Stats</a>
+            {{/if}}
+            {{{body}}}
+        </div>
     </main>
     {{#if loggedIn}}
       <script src="/js/logout.js"></script>
