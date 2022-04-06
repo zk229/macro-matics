@@ -46,8 +46,11 @@ router.get("/view-stats", auth, async (req, res) => {
         }
     });
     workouts = workouts.map((workout) => workout.get({ plain: true }));
-    console.log(meals);
-    res.render("view-stats", { meals, workouts });
+    let difference = 0;
+    meals.forEach(element => difference += element.calories);
+    workouts.forEach(element => difference -= element.calories);
+    const isPositive = difference > 0;
+    res.render("view-stats", { meals, workouts, difference, isPositive });
 });
 
 module.exports = router;

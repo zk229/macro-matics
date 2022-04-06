@@ -13,3 +13,10 @@
     <li>{{this.calories}}</li>
     {{/each}}
 </ul>
+
+{{#if isPositive}}
+<h4>Total Calories Gained</h4>
+{{else}}
+<h4>Total Calories Lost</h4>
+{{/if}}
+<p>{{difference}}</p>
