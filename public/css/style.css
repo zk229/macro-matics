@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Merriweather";
 }
 
 header {
@@ -14,10 +15,12 @@ header {
 }
 
 header h1 {
-  font-weight: bold;
+  font-weight: bolder;
   margin: 0;
   font-size: 36px;
   color: black;
+  font-family: "Merriweather";
+  font-size: 48;
 }
 
 header a {
@@ -43,9 +46,72 @@ header nav ul li a {
   font-size: 1.55vw;
 }
 
+main {
+
+}
+
 body {
   background-image: url("./images/background-image.jpeg");
   background-size: cover;
   background-position: center;
   position: relative;
+}
+
+.button {
+  transition-duration: 0.3s;
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 12px 30px;
+  margin: 10px 20px;
+  font-family: "Merriweather";
+
+}
+
+.button:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.btn-primary {
+  transition-duration: 0.3s;
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 12px 30px;
+  margin: 10px 40px;
+  font-family: "Merriweather";
+}
+
+.welcome {
+  padding: 40px 30px 10px 30px;
+}
+
+.message {
+  padding: 0px 30px 50px 30px;
+}
+
+.login-signup {
+  display: flex;
+}
+
+.login-card {
+  margin: 130px 50px 50px 100px;
+}
+
+.register-card {
+  margin: 130px 50px 50px 100px;
+}
+
+.page-title {
+  margin: 0px 0px 30px 75px;
+  text-decoration: underline;
+}
+
+.form-group {
+  margin: 5px;
 }

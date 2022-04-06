@@ -3,10 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fitness Tracker</title>
-
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-</head>
+    <title>Macro-Matics</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/d/d8/Eo_circle_blue_letter-m.svg">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+  </head>
 
   <body>
     <header>
@@ -17,7 +20,7 @@
           <li>
             <a href="/">Home</a>
             {{#if loggedIn}}
-              <button id="logout" class="btn-no-style">Logout</button>
+              <a id="logout">Logout</a>
             {{else}}
               <a href="/login">Login</a>
             {{/if}}
@@ -26,25 +29,16 @@
       </nav>
     </header>
     <main>
-      <div class="gallery">
+      <div>
+        {{{body}}}
+      </div>
+      <div>
         {{#if loggedIn}}
-          <button class="btn btn-primary" id="workout-btn">Add a Workout</button>
-          <button class="btn btn-primary" id="meal-btn">Add a Meal</button>
-          <button class="btn btn-primary" id="stat-btn">View Stats</button>
+          <a class="button" href="/add-workout">Add a Workout</a>
+          <a class="button" href="/add-meal">Add a Meal</a>
+          <a class="button" href="/view-stats">Today's Stats</a>
         {{/if}}
-    </nav>
-    <main>
-        <aside>
-            <h2>Enjoy the galleries!</h2>
-        </aside>
-        <div class="gallery">
-            {{#if loggedIn}}
-            <a href="/add-workout">Add a Workout</a>
-            <a href="/add-meal">Add a Meal</a>
-            <a href="/view-stats">View Stats</a>
-            {{/if}}
-            {{{body}}}
-        </div>
+      </div>
     </main>
     {{#if loggedIn}}
       <script src="/js/logout.js"></script>

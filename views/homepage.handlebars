@@ -1,5 +1,9 @@
-<h1>Welcome to Macro-Matics!</h1>
+<h1 class="font welcome">Welcome to Macro-Matics!</h1>
 
 {{#if loggedIn}}
-<p>How are you feeling today {{name}}?</p>
+  <p class="font message">How are you feeling today {{name}}?</p>
+{{else}}
+  <p class="font message">Good health starts with what you eat.</p>
+  <h5 class="font message">Not a member yet?</h5>
+  <a class="button" href="/login">START FOR FREE</a>
 {{/if}}
