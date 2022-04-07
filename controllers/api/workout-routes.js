@@ -32,7 +32,8 @@ router.post("/", async (req, res) => {
     const workoutData = await Workout.create({
       date: req.body.date,
       calories: req.body.calories,
-      user_id: myId
+      user_id: myId,
+      name: req.body.name
     });
     res.status(200).json(workoutData);
   }
@@ -51,7 +52,8 @@ router.put("/:id", async (req, res) => {
     workoutData.set({
       date: req.body.date,
       calories: req.body.calories,
-      user_id: req.body.user_id
+      user_id: req.body.user_id,
+      name: req.body.name
     });
     await workoutData.save();
     res.status(200).json(workoutData);

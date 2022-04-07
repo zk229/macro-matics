@@ -3,11 +3,12 @@ const workoutFormHandler = async (event) => {
   
     const date = document.querySelector("#workout-date").value.trim();
     const calories = document.querySelector("#workout-calories").value.trim();
+    const name = document.querySelector("#workout-name").value.trim();
   
     if (date && calories) {
       const response = await fetch('/api/workout', {
         method: 'POST',
-        body: JSON.stringify({ date, calories }),
+        body: JSON.stringify({ date, name, calories }),
         headers: { 'Content-Type': 'application/json' },
       });
   
