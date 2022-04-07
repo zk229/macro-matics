@@ -46,10 +46,6 @@ header nav ul li a {
   font-size: 1.55vw;
 }
 
-main {
-
-}
-
 body {
   background-image: url("./images/background-image.jpeg");
   background-size: cover;
@@ -146,8 +142,8 @@ body {
   width: 100%;
   text-align: left;
   font: normal 16px sans-serif;
-  padding: 45px 50px;
-  position: absolute;
+  padding: 10px 50px;
+  position: fixed;
   bottom: 0;
 }
 
