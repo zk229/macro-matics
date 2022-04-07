@@ -1,0 +1,83 @@
+<<<<<<< Updated upstream
+=======
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Macro-Matics</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/d/d8/Eo_circle_blue_letter-m.svg">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+      <h1>Macro-Matics</h1>
+
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+            {{#if loggedIn}}
+              <a id="logout">Logout</a>
+            {{else}}
+              <a href="/login">Login</a>
+            {{/if}}
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div>
+        {{{body}}}
+      </div>
+      <div>
+        {{#if loggedIn}}
+          <a class="button" href="/add-workout">Add a Workout</a>
+          <a class="button" href="/add-meal">Add a Meal</a>
+          <a class="button" href="/view-stats">Today's Stats</a>
+        {{/if}}
+      </div>
+    </main>
+    <footer class="footer-distributed">
+
+			<div class="footer-right">
+
+				<a href="#"><i class="fa fa-facebook"></i></a>
+				<a href="#"><i class="fa fa-twitter"></i></a>
+				<a href="#"><i class="fa fa-linkedin"></i></a>
+				<a href="#"><i class="fa fa-github"></i></a>
+
+			</div>
+
+			<div class="footer-left">
+
+				<p class="footer-links">
+					<a class="link-1" href="#">Home</a>
+
+					<a href="#">Blog</a>
+
+					<a href="#">Pricing</a>
+
+					<a href="#">About</a>
+
+					<a href="#">Faq</a>
+
+					<a href="#">Contact</a>
+				</p>
+
+				<p>MacroMatics &copy; 2022</p>
+			</div>
+
+		</footer>
+    {{#if loggedIn}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
+  </body>
+
+</html>
+>>>>>>> Stashed changes
