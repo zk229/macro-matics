@@ -37,6 +37,7 @@ router.get("/view-stats", auth, async (req, res) => {
 
 router.get("/view-stats/:date", auth, async (req, res) => {
     const date = req.params.date;
+    console.log(date);
     let meals = await Meal.findAll({
         where: {
             date: date,
