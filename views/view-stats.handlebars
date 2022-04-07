@@ -1,0 +1,22 @@
+ <h2 class="title">Stats for Today</h2>
+
+<h4 class="sub-title">Calorie Intake</h4>
+<ul class="sub-sub-title">
+    {{#each meals as |meal|}}
+    <li>{{this.name}}: {{this.calories}}</li>
+    {{/each}}
+</ul>
+
+<h4 class="sub-title">Calories Burnt</h4>
+<ul class="sub-sub-title">
+    {{#each workouts as |workout|}}
+    <li>{{this.calories}}</li>
+    {{/each}}
+</ul>
+
+{{#if isPositive}}
+<h4 class="sub-title">Total Calories Gained</h4>
+{{else}}
+<h4 class="sub-title">Total Calories Lost</h4>
+{{/if}}
+<p class="sub-sub-title">{{difference}}</p>
