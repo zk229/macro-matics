@@ -23,11 +23,11 @@ router.get('/login', (req, res) => {
 });
 
 router.get("/add-meal", auth, (req, res) => {
-    res.render("add-meal");
+    res.render("add-meal", { loggedIn: req.session.loggedIn });
 });
 
 router.get("/add-workout", auth, (req, res) => {
-    res.render("add-workout");
+    res.render("add-workout", { loggedIn: req.session.loggedIn });
 });
 
 router.get("/view-stats", auth, async (req, res) => {
@@ -50,7 +50,7 @@ router.get("/view-stats", auth, async (req, res) => {
     meals.forEach(element => difference += element.calories);
     workouts.forEach(element => difference -= element.calories);
     const isPositive = difference > 0;
-    res.render("view-stats", { meals, workouts, difference: Math.abs(difference), isPositive });
+    res.render("view-stats", { meals, workouts, difference: Math.abs(difference), isPositive, loggedIn: req.session.loggedIn });
 });
 
 module.exports = router;

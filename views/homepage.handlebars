@@ -7,3 +7,11 @@
   <h5 class="font message">Not a member yet?</h5>
   <a class="button" href="/login">START FOR FREE</a>
 {{/if}}
+
+<div>
+  {{#if loggedIn}}
+  <a class="button" href="/add-workout">Add a Workout</a>
+  <a class="button" href="/add-meal">Add a Meal</a>
+  <a class="button" href="/view-stats">Today's Stats</a>
+  {{/if}}
+</div>
